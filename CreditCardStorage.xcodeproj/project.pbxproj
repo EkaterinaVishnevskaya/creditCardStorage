@@ -13,7 +13,8 @@
 		A999F2D524ED270A0004C877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A999F2D324ED270A0004C877 /* Main.storyboard */; };
 		A999F2D824ED270A0004C877 /* CreditCardStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A999F2D624ED270A0004C877 /* CreditCardStorage.xcdatamodeld */; };
 		A999F2DA24ED270E0004C877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A999F2D924ED270E0004C877 /* Assets.xcassets */; };
-		A999F2DD24ED270E0004C877 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A999F2DB24ED270E0004C877 /* LaunchScreen.storyboard */; };
+		A999F2E524ED27810004C877 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2E424ED27810004C877 /* CoreDataManager.swift */; };
+		A999F2E724ED2AFB0004C877 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2E624ED2AFB0004C877 /* CreditCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +25,9 @@
 		A999F2D424ED270A0004C877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A999F2D724ED270A0004C877 /* CreditCardStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CreditCardStorage.xcdatamodel; sourceTree = "<group>"; };
 		A999F2D924ED270E0004C877 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A999F2DC24ED270E0004C877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A999F2DE24ED270E0004C877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A999F2E424ED27810004C877 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A999F2E624ED2AFB0004C877 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,33 @@
 		A999F2CC24ED270A0004C877 /* CreditCardStorage */ = {
 			isa = PBXGroup;
 			children = (
+				A999F2E824ED2B0B0004C877 /* Manager */,
+				A999F2E924ED2B1F0004C877 /* Model */,
 				A999F2CD24ED270A0004C877 /* AppDelegate.swift */,
 				A999F2CF24ED270A0004C877 /* SceneDelegate.swift */,
 				A999F2D124ED270A0004C877 /* ViewController.swift */,
 				A999F2D324ED270A0004C877 /* Main.storyboard */,
 				A999F2D924ED270E0004C877 /* Assets.xcassets */,
-				A999F2DB24ED270E0004C877 /* LaunchScreen.storyboard */,
 				A999F2DE24ED270E0004C877 /* Info.plist */,
 				A999F2D624ED270A0004C877 /* CreditCardStorage.xcdatamodeld */,
 			);
 			path = CreditCardStorage;
+			sourceTree = "<group>";
+		};
+		A999F2E824ED2B0B0004C877 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				A999F2E424ED27810004C877 /* CoreDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		A999F2E924ED2B1F0004C877 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A999F2E624ED2AFB0004C877 /* CreditCard.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +147,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A999F2DD24ED270E0004C877 /* LaunchScreen.storyboard in Resources */,
 				A999F2DA24ED270E0004C877 /* Assets.xcassets in Resources */,
 				A999F2D524ED270A0004C877 /* Main.storyboard in Resources */,
 			);
@@ -141,9 +159,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A999F2E724ED2AFB0004C877 /* CreditCard.swift in Sources */,
 				A999F2D824ED270A0004C877 /* CreditCardStorage.xcdatamodeld in Sources */,
 				A999F2D224ED270A0004C877 /* ViewController.swift in Sources */,
 				A999F2CE24ED270A0004C877 /* AppDelegate.swift in Sources */,
+				A999F2E524ED27810004C877 /* CoreDataManager.swift in Sources */,
 				A999F2D024ED270A0004C877 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,14 +177,6 @@
 				A999F2D424ED270A0004C877 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A999F2DB24ED270E0004C877 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A999F2DC24ED270E0004C877 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
