@@ -20,12 +20,15 @@
 		40E8C9B224EFB809007493B7 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8C9AA24EFB809007493B7 /* UIView+.swift */; };
 		A999F2CE24ED270A0004C877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2CD24ED270A0004C877 /* AppDelegate.swift */; };
 		A999F2D024ED270A0004C877 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2CF24ED270A0004C877 /* SceneDelegate.swift */; };
-		A999F2D224ED270A0004C877 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2D124ED270A0004C877 /* ViewController.swift */; };
 		A999F2D524ED270A0004C877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A999F2D324ED270A0004C877 /* Main.storyboard */; };
 		A999F2D824ED270A0004C877 /* CreditCardStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A999F2D624ED270A0004C877 /* CreditCardStorage.xcdatamodeld */; };
 		A999F2DA24ED270E0004C877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A999F2D924ED270E0004C877 /* Assets.xcassets */; };
 		A999F2E524ED27810004C877 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2E424ED27810004C877 /* CoreDataManager.swift */; };
 		A999F2E724ED2AFB0004C877 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2E624ED2AFB0004C877 /* CreditCard.swift */; };
+		F033855224EFC17C007B5D1A /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033855024EFC17C007B5D1A /* CardTableViewCell.swift */; };
+		F033855324EFC17C007B5D1A /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F033855124EFC17C007B5D1A /* CardTableViewCell.xib */; };
+		F033855624EFC4F3007B5D1A /* AddCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033855424EFC4F3007B5D1A /* AddCardTableViewCell.swift */; };
+		F033855724EFC4F3007B5D1A /* AddCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F033855524EFC4F3007B5D1A /* AddCardTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,13 +46,16 @@
 		A999F2CA24ED270A0004C877 /* CreditCardStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCardStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A999F2CD24ED270A0004C877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A999F2CF24ED270A0004C877 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A999F2D124ED270A0004C877 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A999F2D424ED270A0004C877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A999F2D724ED270A0004C877 /* CreditCardStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CreditCardStorage.xcdatamodel; sourceTree = "<group>"; };
 		A999F2D924ED270E0004C877 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A999F2DE24ED270E0004C877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A999F2E424ED27810004C877 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A999F2E624ED2AFB0004C877 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		F033855024EFC17C007B5D1A /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		F033855124EFC17C007B5D1A /* CardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
+		F033855424EFC4F3007B5D1A /* AddCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardTableViewCell.swift; sourceTree = "<group>"; };
+		F033855524EFC4F3007B5D1A /* AddCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCardTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 		40542BBC24ED38B6002E3849 /* CreditCardListView */ = {
 			isa = PBXGroup;
 			children = (
+				F033854F24EFC148007B5D1A /* Cells */,
 				40542BBD24ED38CC002E3849 /* CreditCardListView.swift */,
 			);
 			path = CreditCardListView;
@@ -177,7 +184,6 @@
 				A999F2E924ED2B1F0004C877 /* Model */,
 				A999F2CD24ED270A0004C877 /* AppDelegate.swift */,
 				A999F2CF24ED270A0004C877 /* SceneDelegate.swift */,
-				A999F2D124ED270A0004C877 /* ViewController.swift */,
 				A999F2D324ED270A0004C877 /* Main.storyboard */,
 				A999F2D924ED270E0004C877 /* Assets.xcassets */,
 				A999F2DE24ED270E0004C877 /* Info.plist */,
@@ -200,6 +206,17 @@
 				A999F2E624ED2AFB0004C877 /* CreditCard.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F033854F24EFC148007B5D1A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F033855024EFC17C007B5D1A /* CardTableViewCell.swift */,
+				F033855124EFC17C007B5D1A /* CardTableViewCell.xib */,
+				F033855424EFC4F3007B5D1A /* AddCardTableViewCell.swift */,
+				F033855524EFC4F3007B5D1A /* AddCardTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +280,8 @@
 				A999F2DA24ED270E0004C877 /* Assets.xcassets in Resources */,
 				40E8C9AC24EFB809007493B7 /* NavigationHeaderView.xib in Resources */,
 				A999F2D524ED270A0004C877 /* Main.storyboard in Resources */,
+				F033855324EFC17C007B5D1A /* CardTableViewCell.xib in Resources */,
+				F033855724EFC4F3007B5D1A /* AddCardTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,10 +293,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				40542BC124ED3938002E3849 /* CreditCardListInteractor.swift in Sources */,
+				F033855624EFC4F3007B5D1A /* AddCardTableViewCell.swift in Sources */,
 				40E8C9B024EFB809007493B7 /* Array+.swift in Sources */,
 				A999F2E724ED2AFB0004C877 /* CreditCard.swift in Sources */,
 				A999F2D824ED270A0004C877 /* CreditCardStorage.xcdatamodeld in Sources */,
-				A999F2D224ED270A0004C877 /* ViewController.swift in Sources */,
+				F033855224EFC17C007B5D1A /* CardTableViewCell.swift in Sources */,
 				A999F2CE24ED270A0004C877 /* AppDelegate.swift in Sources */,
 				40E8C9B224EFB809007493B7 /* UIView+.swift in Sources */,
 				A999F2E524ED27810004C877 /* CoreDataManager.swift in Sources */,
