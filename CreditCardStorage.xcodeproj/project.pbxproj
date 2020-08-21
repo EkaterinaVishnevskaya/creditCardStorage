@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40542BBB24ED38AD002E3849 /* CreditCardListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40542BBA24ED38AD002E3849 /* CreditCardListAssembly.swift */; };
+		40542BBE24ED38CC002E3849 /* CreditCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40542BBD24ED38CC002E3849 /* CreditCardListView.swift */; };
+		40542BC124ED3938002E3849 /* CreditCardListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40542BC024ED3938002E3849 /* CreditCardListInteractor.swift */; };
+		40542BC424ED3957002E3849 /* CreditCardListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40542BC324ED3957002E3849 /* CreditCardListPresenter.swift */; };
+		40542BC724ED397F002E3849 /* CreditCardListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40542BC624ED397F002E3849 /* CreditCardListEntity.swift */; };
+		40542BCA24ED399B002E3849 /* CreditCardListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40542BC924ED399B002E3849 /* CreditCardListRouter.swift */; };
+		40E8C9AB24EFB809007493B7 /* NavigationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8C9A024EFB808007493B7 /* NavigationHeaderView.swift */; };
+		40E8C9AC24EFB809007493B7 /* NavigationHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E8C9A124EFB808007493B7 /* NavigationHeaderView.xib */; };
+		40E8C9B024EFB809007493B7 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8C9A724EFB808007493B7 /* Array+.swift */; };
+		40E8C9B124EFB809007493B7 /* NibInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8C9A824EFB808007493B7 /* NibInitializable.swift */; };
+		40E8C9B224EFB809007493B7 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8C9AA24EFB809007493B7 /* UIView+.swift */; };
 		A999F2CE24ED270A0004C877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2CD24ED270A0004C877 /* AppDelegate.swift */; };
 		A999F2D024ED270A0004C877 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2CF24ED270A0004C877 /* SceneDelegate.swift */; };
 		A999F2D224ED270A0004C877 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2D124ED270A0004C877 /* ViewController.swift */; };
@@ -18,6 +29,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40542BBA24ED38AD002E3849 /* CreditCardListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListAssembly.swift; sourceTree = "<group>"; };
+		40542BBD24ED38CC002E3849 /* CreditCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListView.swift; sourceTree = "<group>"; };
+		40542BC024ED3938002E3849 /* CreditCardListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListInteractor.swift; sourceTree = "<group>"; };
+		40542BC324ED3957002E3849 /* CreditCardListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListPresenter.swift; sourceTree = "<group>"; };
+		40542BC624ED397F002E3849 /* CreditCardListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListEntity.swift; sourceTree = "<group>"; };
+		40542BC924ED399B002E3849 /* CreditCardListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListRouter.swift; sourceTree = "<group>"; };
+		40E8C9A024EFB808007493B7 /* NavigationHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationHeaderView.swift; sourceTree = "<group>"; };
+		40E8C9A124EFB808007493B7 /* NavigationHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationHeaderView.xib; sourceTree = "<group>"; };
+		40E8C9A724EFB808007493B7 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		40E8C9A824EFB808007493B7 /* NibInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibInitializable.swift; sourceTree = "<group>"; };
+		40E8C9AA24EFB809007493B7 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		A999F2CA24ED270A0004C877 /* CreditCardStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCardStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A999F2CD24ED270A0004C877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A999F2CF24ED270A0004C877 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +63,93 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40542BB824ED384E002E3849 /* CreditCardList */ = {
+			isa = PBXGroup;
+			children = (
+				40542BC824ED398A002E3849 /* CreditCardListRouter */,
+				40542BC524ED3965002E3849 /* CreditCardListEntity */,
+				40542BC224ED3944002E3849 /* CreditCardListPresenter */,
+				40542BBF24ED38E4002E3849 /* CreditCardListInteractor */,
+				40542BBC24ED38B6002E3849 /* CreditCardListView */,
+				40542BB924ED387E002E3849 /* CreditCardListAssembly */,
+			);
+			path = CreditCardList;
+			sourceTree = "<group>";
+		};
+		40542BB924ED387E002E3849 /* CreditCardListAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				40542BBA24ED38AD002E3849 /* CreditCardListAssembly.swift */,
+			);
+			path = CreditCardListAssembly;
+			sourceTree = "<group>";
+		};
+		40542BBC24ED38B6002E3849 /* CreditCardListView */ = {
+			isa = PBXGroup;
+			children = (
+				40542BBD24ED38CC002E3849 /* CreditCardListView.swift */,
+			);
+			path = CreditCardListView;
+			sourceTree = "<group>";
+		};
+		40542BBF24ED38E4002E3849 /* CreditCardListInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				40542BC024ED3938002E3849 /* CreditCardListInteractor.swift */,
+			);
+			path = CreditCardListInteractor;
+			sourceTree = "<group>";
+		};
+		40542BC224ED3944002E3849 /* CreditCardListPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				40542BC324ED3957002E3849 /* CreditCardListPresenter.swift */,
+			);
+			path = CreditCardListPresenter;
+			sourceTree = "<group>";
+		};
+		40542BC524ED3965002E3849 /* CreditCardListEntity */ = {
+			isa = PBXGroup;
+			children = (
+				40542BC624ED397F002E3849 /* CreditCardListEntity.swift */,
+			);
+			path = CreditCardListEntity;
+			sourceTree = "<group>";
+		};
+		40542BC824ED398A002E3849 /* CreditCardListRouter */ = {
+			isa = PBXGroup;
+			children = (
+				40542BC924ED399B002E3849 /* CreditCardListRouter.swift */,
+			);
+			path = CreditCardListRouter;
+			sourceTree = "<group>";
+		};
+		40E8C99F24EFB808007493B7 /* NavigationHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				40E8C9A024EFB808007493B7 /* NavigationHeaderView.swift */,
+				40E8C9A124EFB808007493B7 /* NavigationHeaderView.xib */,
+			);
+			path = NavigationHeaderView;
+			sourceTree = "<group>";
+		};
+		40E8C9A624EFB808007493B7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				40E8C9A724EFB808007493B7 /* Array+.swift */,
+				40E8C9A824EFB808007493B7 /* NibInitializable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		40E8C9A924EFB809007493B7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				40E8C9AA24EFB809007493B7 /* UIView+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A999F2C124ED270A0004C877 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +169,10 @@
 		A999F2CC24ED270A0004C877 /* CreditCardStorage */ = {
 			isa = PBXGroup;
 			children = (
+				40E8C9A924EFB809007493B7 /* Extensions */,
+				40E8C99F24EFB808007493B7 /* NavigationHeaderView */,
+				40E8C9A624EFB808007493B7 /* Protocols */,
+				40542BB824ED384E002E3849 /* CreditCardList */,
 				A999F2E824ED2B0B0004C877 /* Manager */,
 				A999F2E924ED2B1F0004C877 /* Model */,
 				A999F2CD24ED270A0004C877 /* AppDelegate.swift */,
@@ -148,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A999F2DA24ED270E0004C877 /* Assets.xcassets in Resources */,
+				40E8C9AC24EFB809007493B7 /* NavigationHeaderView.xib in Resources */,
 				A999F2D524ED270A0004C877 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,12 +273,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40542BC124ED3938002E3849 /* CreditCardListInteractor.swift in Sources */,
+				40E8C9B024EFB809007493B7 /* Array+.swift in Sources */,
 				A999F2E724ED2AFB0004C877 /* CreditCard.swift in Sources */,
 				A999F2D824ED270A0004C877 /* CreditCardStorage.xcdatamodeld in Sources */,
 				A999F2D224ED270A0004C877 /* ViewController.swift in Sources */,
 				A999F2CE24ED270A0004C877 /* AppDelegate.swift in Sources */,
+				40E8C9B224EFB809007493B7 /* UIView+.swift in Sources */,
 				A999F2E524ED27810004C877 /* CoreDataManager.swift in Sources */,
+				40542BBB24ED38AD002E3849 /* CreditCardListAssembly.swift in Sources */,
+				40E8C9AB24EFB809007493B7 /* NavigationHeaderView.swift in Sources */,
+				40E8C9B124EFB809007493B7 /* NibInitializable.swift in Sources */,
+				40542BCA24ED399B002E3849 /* CreditCardListRouter.swift in Sources */,
 				A999F2D024ED270A0004C877 /* SceneDelegate.swift in Sources */,
+				40542BBE24ED38CC002E3849 /* CreditCardListView.swift in Sources */,
+				40542BC724ED397F002E3849 /* CreditCardListEntity.swift in Sources */,
+				40542BC424ED3957002E3849 /* CreditCardListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
