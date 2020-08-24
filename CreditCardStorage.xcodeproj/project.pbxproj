@@ -18,6 +18,8 @@
 		40E8C9B024EFB809007493B7 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8C9A724EFB808007493B7 /* Array+.swift */; };
 		40E8C9B124EFB809007493B7 /* NibInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8C9A824EFB808007493B7 /* NibInitializable.swift */; };
 		40E8C9B224EFB809007493B7 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8C9AA24EFB809007493B7 /* UIView+.swift */; };
+		749720ED24F3AEDB005BF6FC /* CreditCardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749720EC24F3AEDB005BF6FC /* CreditCardListViewModel.swift */; };
+		749720F024F3AF0D005BF6FC /* CreditCardListDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749720EF24F3AF0D005BF6FC /* CreditCardListDataConverter.swift */; };
 		A999F2CE24ED270A0004C877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2CD24ED270A0004C877 /* AppDelegate.swift */; };
 		A999F2D024ED270A0004C877 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2CF24ED270A0004C877 /* SceneDelegate.swift */; };
 		A999F2D524ED270A0004C877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A999F2D324ED270A0004C877 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 		40E8C9A724EFB808007493B7 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		40E8C9A824EFB808007493B7 /* NibInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibInitializable.swift; sourceTree = "<group>"; };
 		40E8C9AA24EFB809007493B7 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		749720EC24F3AEDB005BF6FC /* CreditCardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListViewModel.swift; sourceTree = "<group>"; };
+		749720EF24F3AF0D005BF6FC /* CreditCardListDataConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListDataConverter.swift; sourceTree = "<group>"; };
 		A999F2CA24ED270A0004C877 /* CreditCardStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCardStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A999F2CD24ED270A0004C877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A999F2CF24ED270A0004C877 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 		40542BB824ED384E002E3849 /* CreditCardList */ = {
 			isa = PBXGroup;
 			children = (
+				749720EE24F3AEE8005BF6FC /* DataConverter */,
+				749720EB24F3AEB3005BF6FC /* ViewModel */,
 				40542BC824ED398A002E3849 /* CreditCardListRouter */,
 				40542BC524ED3965002E3849 /* CreditCardListEntity */,
 				40542BC224ED3944002E3849 /* CreditCardListPresenter */,
@@ -155,6 +161,22 @@
 				40E8C9AA24EFB809007493B7 /* UIView+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		749720EB24F3AEB3005BF6FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				749720EC24F3AEDB005BF6FC /* CreditCardListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		749720EE24F3AEE8005BF6FC /* DataConverter */ = {
+			isa = PBXGroup;
+			children = (
+				749720EF24F3AF0D005BF6FC /* CreditCardListDataConverter.swift */,
+			);
+			path = DataConverter;
 			sourceTree = "<group>";
 		};
 		A999F2C124ED270A0004C877 = {
@@ -301,8 +323,10 @@
 				A999F2CE24ED270A0004C877 /* AppDelegate.swift in Sources */,
 				40E8C9B224EFB809007493B7 /* UIView+.swift in Sources */,
 				A999F2E524ED27810004C877 /* CoreDataManager.swift in Sources */,
+				749720F024F3AF0D005BF6FC /* CreditCardListDataConverter.swift in Sources */,
 				40542BBB24ED38AD002E3849 /* CreditCardListAssembly.swift in Sources */,
 				40E8C9AB24EFB809007493B7 /* NavigationHeaderView.swift in Sources */,
+				749720ED24F3AEDB005BF6FC /* CreditCardListViewModel.swift in Sources */,
 				40E8C9B124EFB809007493B7 /* NibInitializable.swift in Sources */,
 				40542BCA24ED399B002E3849 /* CreditCardListRouter.swift in Sources */,
 				A999F2D024ED270A0004C877 /* SceneDelegate.swift in Sources */,
@@ -446,6 +470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CreditCardStorage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,6 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CreditCardStorage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

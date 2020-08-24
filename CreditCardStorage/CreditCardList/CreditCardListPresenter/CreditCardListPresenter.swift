@@ -13,7 +13,10 @@ final class CreditCardListPresenter {
     weak var view: ViewCreditCardListInput?
     var interactor: InteractorCreditCardListInput?
     var router: RouterCreditCardListInput?
-
+    private let dataConverter: CreditCardDataConverterInput
+    init(dataConverter: CreditCardDataConverterInput) {
+        self.dataConverter = dataConverter
+    }
 }
 
 extension CreditCardListPresenter: ViewCreditCardListOutput {
