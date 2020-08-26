@@ -9,14 +9,21 @@
 import UIKit
 
 protocol RouterCreditCardListInput {
-    
+    func navigateToAddCardScreen()
 }
 
 final class CreditCardListRouter {
     
+    unowned let view: UIViewController
 
+    init(view: UIViewController) {
+        self.view = view
+    }
 }
 
 extension CreditCardListRouter: RouterCreditCardListInput {
-    
+    func navigateToAddCardScreen() {
+        view.navigationController?.pushViewController(AddCreditCardAssembly.assembly(),
+                                                      animated: true)
+    }
 }

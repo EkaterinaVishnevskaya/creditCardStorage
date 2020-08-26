@@ -14,6 +14,7 @@ protocol ViewCreditCardListInput: AnyObject {
 
 protocol ViewCreditCardListOutput {
     func viewIsReady()
+    func addCardClicked()
 }
 
 final class CreditCardListView: UIViewController {
@@ -104,6 +105,21 @@ extension CreditCardListView: UITableViewDelegate, UITableViewDataSource {
             return "Добавить способ оплаты"
         default:
             return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.section {
+        case CardTableSections.card.rawValue:
+            // no-op
+            break
+        case CardTableSections.addCard.rawValue:
+            presenter?.addCardClicked()
+            break
+        default:
+            // no-op
+            break
         }
     }
 }

@@ -21,9 +21,14 @@ final class CreditCardListPresenter {
 
 extension CreditCardListPresenter: ViewCreditCardListOutput {
     
+    func addCardClicked() {
+        router?.navigateToAddCardScreen()
+    }
+    
     func viewIsReady() {
         
     }
+    
     
 }
 
