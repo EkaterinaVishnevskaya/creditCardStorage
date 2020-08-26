@@ -18,6 +18,8 @@
 		40E8C9B024EFB809007493B7 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8C9A724EFB808007493B7 /* Array+.swift */; };
 		40E8C9B124EFB809007493B7 /* NibInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8C9A824EFB808007493B7 /* NibInitializable.swift */; };
 		40E8C9B224EFB809007493B7 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8C9AA24EFB809007493B7 /* UIView+.swift */; };
+		53AA60DE24F651F6003299FF /* TitledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA60DD24F651F6003299FF /* TitledTextField.swift */; };
+		53AA60E024F65635003299FF /* TitledTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AA60DF24F65635003299FF /* TitledTextFieldViewModel.swift */; };
 		53B8A75324F3BA5D00BE745D /* CreditCardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B8A75024F3BA5D00BE745D /* CreditCardListViewModel.swift */; };
 		53B8A75424F3BA5D00BE745D /* CreditCardListDataConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B8A75224F3BA5D00BE745D /* CreditCardListDataConverter.swift */; };
 		53B8A75C24F3C18B00BE745D /* AddCreditCardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B8A75B24F3C18B00BE745D /* AddCreditCardInteractor.swift */; };
@@ -49,6 +51,8 @@
 		40E8C9A724EFB808007493B7 /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		40E8C9A824EFB808007493B7 /* NibInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibInitializable.swift; sourceTree = "<group>"; };
 		40E8C9AA24EFB809007493B7 /* UIView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		53AA60DD24F651F6003299FF /* TitledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledTextField.swift; sourceTree = "<group>"; };
+		53AA60DF24F65635003299FF /* TitledTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledTextFieldViewModel.swift; sourceTree = "<group>"; };
 		53B8A75024F3BA5D00BE745D /* CreditCardListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardListViewModel.swift; sourceTree = "<group>"; };
 		53B8A75224F3BA5D00BE745D /* CreditCardListDataConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardListDataConverter.swift; sourceTree = "<group>"; };
 		53B8A75B24F3C18B00BE745D /* AddCreditCardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCreditCardInteractor.swift; sourceTree = "<group>"; };
@@ -171,6 +175,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		53AA60DC24F651CC003299FF /* TitledTextField */ = {
+			isa = PBXGroup;
+			children = (
+				53AA60DD24F651F6003299FF /* TitledTextField.swift */,
+				53AA60DF24F65635003299FF /* TitledTextFieldViewModel.swift */,
+			);
+			path = TitledTextField;
+			sourceTree = "<group>";
+		};
 		53B8A74F24F3BA5D00BE745D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +271,7 @@
 		A999F2CC24ED270A0004C877 /* CreditCardStorage */ = {
 			isa = PBXGroup;
 			children = (
+				53AA60DC24F651CC003299FF /* TitledTextField */,
 				53B8A75624F3C12B00BE745D /* AddCreditCard */,
 				40E8C9A924EFB809007493B7 /* Extensions */,
 				40E8C99F24EFB808007493B7 /* NavigationHeaderView */,
@@ -373,8 +387,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53AA60E024F65635003299FF /* TitledTextFieldViewModel.swift in Sources */,
 				40542BC124ED3938002E3849 /* CreditCardListInteractor.swift in Sources */,
 				53B8A76524F3C1EC00BE745D /* AddCreditCardViewController.swift in Sources */,
+				53AA60DE24F651F6003299FF /* TitledTextField.swift in Sources */,
 				F033855624EFC4F3007B5D1A /* AddCardTableViewCell.swift in Sources */,
 				40E8C9B024EFB809007493B7 /* Array+.swift in Sources */,
 				53B8A76824F3C2DF00BE745D /* AddCreditCardAssembly.swift in Sources */,
