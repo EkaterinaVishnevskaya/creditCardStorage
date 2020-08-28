@@ -18,41 +18,106 @@ protocol AddCreditCardViewInput: AnyObject {
 
 final class AddCreditCardViewController: UIViewController {
     
+    
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let navigationViewHeight: CGFloat = 135
+    }
+    
+    
+    // MARK: - Public properties
+    
     var presenter: AddCreditCardViewOutput?
-    private let textField = TitledTextField()
+    
+    
+    // MARK: - Private properties
+    
+    private let cardNumberTextField = TitledTextField()
+    private let dateExpirationTextField = TitledTextField()
+    private let CVCTextField = TitledTextField()
+    private let phoneNumberTextField = TitledTextField()
+    private let navigationView = NavigationHeaderView()
+    
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
-        
         view.backgroundColor = .white
-        
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(textField)
-        
-        NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            textField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            textField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-        ])
+        setupViews()
+        setConstraintsForViews()
+        NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        textField.viewModel = TitledTextFieldViewModel(titleText: "blabla",
-                                                       textFieldPlaceholderText: "ablabla",
-                                                       keyboardType: UIKeyboardType.default,
-                                                       isSecure: true)
+        setupTextFields()
+        
     }
     
     @objc func rotated() {
-//        view.layoutIfNeeded()
-//        view.setNeedsLayout()
-        textField.layoutIfNeeded()
-        textField.setNeedsLayout()
+        //        view.layoutIfNeeded()
+        //        view.setNeedsLayout()
+        cardNumberTextField.layoutIfNeeded()
+        cardNumberTextField.setNeedsLayout()
     }
+    
+    
+    // MARK: - Private methods
+    
+    private func setupViews() {
+        [navigationView, cardNumberTextField, dateExpirationTextField, CVCTextField, phoneNumberTextField].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview($0)
+        }
+    }
+    
+    private func setConstraintsForViews() {
+        NSLayoutConstraint.activate([
+            navigationView.topAnchor.constraint(equalTo: view.topAnchor),
+            navigationView.heightAnchor.constraint(equalToConstant: Constants.navigationViewHeight),
+            navigationView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            navigationView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            cardNumberTextField.topAnchor.constraint(equalTo: navigationView.bottomAnchor, constant: 35),
+            cardNumberTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 21),
+            cardNumberTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -21),
+            
+            CVCTextField.topAnchor.constraint(equalTo: cardNumberTextField.bottomAnchor, constant: 26),
+            CVCTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -21),
+            
+            dateExpirationTextField.topAnchor.constraint(equalTo: cardNumberTextField.bottomAnchor, constant: 26),
+            dateExpirationTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 21),
+            dateExpirationTextField.trailingAnchor.constraint(equalTo: CVCTextField.leadingAnchor, constant: -16),
+            
+            phoneNumberTextField.topAnchor.constraint(equalTo: dateExpirationTextField.bottomAnchor, constant: 26),
+            phoneNumberTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 21),
+            phoneNumberTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -21)
+        ])
+    }
+    
+    private func setupTextFields() {
+        cardNumberTextField.viewModel = TitledTextFieldViewModel(titleText: "Номер карты",
+                                                                 textFieldPlaceholderText: "Номер вашей карты",
+                                                                 keyboardType: UIKeyboardType.default,
+                                                                 isSecure: true)
+        dateExpirationTextField.viewModel = TitledTextFieldViewModel(titleText: "Срок действия",
+                                                                     textFieldPlaceholderText: "--/--",
+                                                                     keyboardType: .default,
+                                                                     isSecure: false)
+        CVCTextField.viewModel = TitledTextFieldViewModel(titleText: "CVC Код",
+                                                          textFieldPlaceholderText: "Защитный код",
+                                                          keyboardType: .numberPad,
+                                                          isSecure: true)
+        phoneNumberTextField.viewModel = TitledTextFieldViewModel(titleText: "Your phone #",
+                                                                  textFieldPlaceholderText: "Enter you phone number",
+                                                                  keyboardType: .phonePad,
+                                                                  isSecure: false)
+    }
+    
 }
 
 extension AddCreditCardViewController: AddCreditCardViewInput {
