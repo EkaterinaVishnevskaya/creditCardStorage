@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol TitledTextFieldDelegate: AnyObject {
+    func textFieldDidChanged(text: String)
+}
+
 final class TitledTextField: UIView {
     
     //MARK: - Constants
@@ -22,6 +26,7 @@ final class TitledTextField: UIView {
     private let titleLabel = UILabel()
     private let textField = UITextField()
     private let bottomLine = CALayer()
+    weak var delegate: TitledTextFieldDelegate?
     
     var viewModel: TitledTextFieldViewModel? {
         didSet {
@@ -49,7 +54,7 @@ final class TitledTextField: UIView {
                                   y: textField.frame.height - 1,
                                   width: textField.frame.width,
                                   height: 1.0)
-//        bottomLine.layoutSublayers()
+        //        bottomLine.layoutSublayers()
     }
     
     //MARK: - Private
@@ -62,6 +67,8 @@ final class TitledTextField: UIView {
         bottomLine.backgroundColor = UIColor.gray.cgColor
         textField.borderStyle = .none
         textField.layer.addSublayer(bottomLine)
+        
+        textField.addTarget(self, action: #selector(didChangeText(textField:)), for: .editingChanged)
         
         let stackView = UIStackView(arrangedSubviews: [titleLabel, textField])
         stackView.axis = .vertical
@@ -83,6 +90,12 @@ final class TitledTextField: UIView {
         textField.keyboardType = model.keyboardType
         textField.isSecureTextEntry = model.isSecure
     }
+    
+    @objc private func didChangeText(textField: UITextField) {
+        if let text = textField.text {
+            delegate?.textFieldDidChanged(text: text)
+        }
+    }
 }
 
 //MARK: - UITextFieldDelegate
@@ -95,4 +108,18 @@ extension TitledTextField: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         bottomLine.backgroundColor = UIColor.gray.cgColor
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        switch viewModel?.creditCardField {
+        case .cardNumber:
+            let newLength = (textField.text ?? "").count + string.count - range.length
+            return newLength <= 19
+        default:
+            break
+        }
+        return true
+        
+    }
 }
+
+//

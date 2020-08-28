@@ -37,7 +37,7 @@ final class CoreDataManager {
         
         let newCreditCard = NSEntityDescription.insertNewObject(forEntityName: Keys.creditCard, into: context) as! CreditCardEntity
         
-        newCreditCard.fullName = creditCard.fullName
+        //newCreditCard.fullName = creditCard.fullName
         newCreditCard.phoneNumber = creditCard.phoneNumber
         newCreditCard.expirationDate = creditCard.expirationDate
         newCreditCard.cardNumber = creditCard.cardNumber
@@ -58,9 +58,8 @@ final class CoreDataManager {
             
             var result: [CreditCard] = []
             for card in cards {
-                guard let fullName = card.fullName,
-                      let expirationDate = card.expirationDate else { return nil }
-                let cardModel = CreditCard(phoneNumber: card.phoneNumber, fullName: fullName, expirationDate: expirationDate, cardNumber: card.cardNumber, cardCVV: card.cardCVV)
+                guard let expirationDate = card.expirationDate else { return nil }
+                let cardModel = CreditCard(phoneNumber: card.phoneNumber, expirationDate: expirationDate, cardNumber: card.cardNumber, cardCVV: card.cardCVV)
                 result.append(cardModel)
             }
             return result

@@ -13,10 +13,21 @@ final class AddCreditCardPresenter {
     weak var view: AddCreditCardViewInput?
     var interactor: AddCreditCardInteractorInput?
     var router: AddCreditCardRouterInput?
+    private var validator: CardValidatorProtocol!
+    
+    init(validator: CardValidatorProtocol) {
+        self.validator = validator
+    }
+
 }
 
 extension AddCreditCardPresenter: AddCreditCardViewOutput {
-    
+
+    func modifyCreditCardString(cardNumber: String) {
+        if let cardType = validator.verify(cardNumber: cardNumber) {
+             print(cardType)
+        }
+    }
 }
 
 extension AddCreditCardPresenter: AddCreditCardInteractorOutput {

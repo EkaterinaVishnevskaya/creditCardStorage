@@ -11,8 +11,9 @@ import UIKit
 final class AddCreditCardAssembly {
     
     static func assembly() -> UIViewController {
+        let validator = CardValidator()
         let view = AddCreditCardViewController()
-        let presenter = AddCreditCardPresenter()
+        let presenter = AddCreditCardPresenter(validator: validator)
         let interactor = AddCreditCardInteractor()
         let router = AddCreditCardRouter(view: view)
         

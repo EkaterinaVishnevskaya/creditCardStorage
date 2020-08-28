@@ -13,4 +13,14 @@ struct TitledTextFieldViewModel {
     let textFieldPlaceholderText: String
     let keyboardType: UIKeyboardType
     let isSecure: Bool
+    let creditCardField: CreditCardFieldType
+}
+
+enum CreditCardFieldType {
+    
+    case cardNumber
+    case dateExpiration
+    case CVCTextField
+    case phoneNumber
+
 }

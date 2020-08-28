@@ -9,11 +9,11 @@
 import UIKit
 
 protocol AddCreditCardViewOutput {
-    
+    func modifyCreditCardString(cardNumber: String)
 }
 
 protocol AddCreditCardViewInput: AnyObject {
-    
+    func setModifiedText(text: String)
 }
 
 final class AddCreditCardViewController: UIViewController {
@@ -73,6 +73,7 @@ final class AddCreditCardViewController: UIViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
+        cardNumberTextField.delegate = self
     }
     
     private func setConstraintsForViews() {
@@ -103,23 +104,31 @@ final class AddCreditCardViewController: UIViewController {
         cardNumberTextField.viewModel = TitledTextFieldViewModel(titleText: "Номер карты",
                                                                  textFieldPlaceholderText: "Номер вашей карты",
                                                                  keyboardType: UIKeyboardType.default,
-                                                                 isSecure: true)
+                                                                 isSecure: true, creditCardField: .cardNumber)
         dateExpirationTextField.viewModel = TitledTextFieldViewModel(titleText: "Срок действия",
                                                                      textFieldPlaceholderText: "--/--",
                                                                      keyboardType: .default,
-                                                                     isSecure: false)
+                                                                     isSecure: false, creditCardField: .dateExpiration)
         CVCTextField.viewModel = TitledTextFieldViewModel(titleText: "CVC Код",
                                                           textFieldPlaceholderText: "Защитный код",
                                                           keyboardType: .numberPad,
-                                                          isSecure: true)
+                                                          isSecure: true, creditCardField: .CVCTextField)
         phoneNumberTextField.viewModel = TitledTextFieldViewModel(titleText: "Your phone #",
                                                                   textFieldPlaceholderText: "Enter you phone number",
                                                                   keyboardType: .phonePad,
-                                                                  isSecure: false)
+                                                                  isSecure: false, creditCardField: .phoneNumber)
     }
     
 }
 
 extension AddCreditCardViewController: AddCreditCardViewInput {
-    
+    func setModifiedText(text: String) {
+        
+    }
+}
+
+extension AddCreditCardViewController: TitledTextFieldDelegate {
+    func textFieldDidChanged(text: String) {
+        presenter?.modifyCreditCardString(cardNumber: text)
+    }
 }
