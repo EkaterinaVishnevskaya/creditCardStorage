@@ -14,8 +14,10 @@ final class CreditCardListPresenter {
     var interactor: InteractorCreditCardListInput?
     var router: RouterCreditCardListInput?
     private let dataConverter: CreditCardDataConverterInput
-    init(dataConverter: CreditCardDataConverterInput) {
+    private let dataManager: CoreDataManagerInput
+    init(dataConverter: CreditCardDataConverterInput, dataManager: CoreDataManagerInput) {
         self.dataConverter = dataConverter
+        self.dataManager = dataManager
     }
 }
 
@@ -26,7 +28,7 @@ extension CreditCardListPresenter: ViewCreditCardListOutput {
     }
     
     func viewIsReady() {
-        
+        let creditCardListViewModel = CreditCardListViewModel(creditCards: dataManager.retrieveCreditCardEntities() ?? [])
     }
     
     

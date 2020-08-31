@@ -10,6 +10,7 @@ import UIKit
 
 protocol AddCreditCardViewOutput {
     func modifyCreditCardString(cardNumber: String)
+    func saveInfo(cardNumber: String?, dateExpiration: String?, CVC: String?, phoneNumber: String?)
 }
 
 protocol AddCreditCardViewInput: AnyObject {
@@ -82,7 +83,16 @@ final class AddCreditCardViewController: UIViewController {
         buttonSave.translatesAutoresizingMaskIntoConstraints = false
         buttonSave.setTitle("Save", for: .normal)
         buttonSave.setTitleColor(.blue, for: .normal)
+        buttonSave.addTarget(self, action: #selector(saveButtonAction), for: .touchUpInside)
         view.addSubview(buttonSave)
+    }
+    
+    @objc private func saveButtonAction() {
+        let cardNumber = cardNumberTextField.text
+        let phoneNumber = phoneNumberTextField.text
+        let CVC = CVCTextField.text
+        let dateExpiraton = dateExpirationTextField.text
+        presenter?.saveInfo(cardNumber: cardNumber, dateExpiration: dateExpiraton, CVC: CVC, phoneNumber: phoneNumber)
     }
     
     private func setConstraintsForViews() {

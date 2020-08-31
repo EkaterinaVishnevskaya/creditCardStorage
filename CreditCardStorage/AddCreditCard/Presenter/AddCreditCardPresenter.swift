@@ -13,16 +13,27 @@ final class AddCreditCardPresenter {
     weak var view: AddCreditCardViewInput?
     var interactor: AddCreditCardInteractorInput?
     var router: AddCreditCardRouterInput?
-    private var validator: CardValidatorProtocol!
+    private let validator: CardValidatorProtocol
+    private let dataManager: CoreDataManagerInput
     
-    init(validator: CardValidatorProtocol) {
+    init(validator: CardValidatorProtocol, dataManager: CoreDataManagerInput) {
         self.validator = validator
+        self.dataManager = dataManager
     }
 
 }
 
 extension AddCreditCardPresenter: AddCreditCardViewOutput {
-
+    func saveInfo(cardNumber: String?, dateExpiration: String?, CVC: String?, phoneNumber: String?) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/yy"
+        guard let intCardNumber = Int64(cardNumber ?? ""), let expirationDate = dateFormatter.date(from: dateExpiration ?? ""), let cardCVC = Int16(CVC ?? ""), let intPhoneNumber = Int64(phoneNumber ?? "") else {
+            return
+        }
+        let card = CreditCard(phoneNumber: intPhoneNumber, expirationDate: expirationDate, cardNumber: intCardNumber, cardCVV: cardCVC)
+        dataManager.createCreditCardEntity(card)
+    }
+    
     func modifyCreditCardString(cardNumber: String) {
         if let cardType = validator.verify(cardNumber: cardNumber) {
              print(cardType)
@@ -42,6 +53,8 @@ extension AddCreditCardPresenter: AddCreditCardViewOutput {
         }
         view?.setModifiedText(text: modifiedCreditCardString)
     }
+    
+    
 }
 
 extension AddCreditCardPresenter: AddCreditCardInteractorOutput {

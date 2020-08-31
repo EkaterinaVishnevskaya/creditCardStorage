@@ -8,6 +8,12 @@
 
 import CoreData
 
+protocol CoreDataManagerInput {
+    func createCreditCardEntity(_ creditCard: CreditCard)
+    func retrieveCreditCardEntities() -> [CreditCard]?
+    func deleteCreditCardEntity(_ cardNumber: Int64, _ CVV: Int16)
+}
+
 final class CoreDataManager {
     
     // MARK: - Constants
@@ -30,10 +36,11 @@ final class CoreDataManager {
     private var context: NSManagedObjectContext {
         return persistentContainer.viewContext
     }
-    
-    // MARK: - Credit card CRUD
-    
-    private func createCreditCardEntity(_ creditCard: CreditCard) {
+}
+
+// MARK: - Credit card CRUD
+extension CoreDataManager: CoreDataManagerInput {
+    func createCreditCardEntity(_ creditCard: CreditCard) {
         
         let newCreditCard = NSEntityDescription.insertNewObject(forEntityName: Keys.creditCard, into: context) as! CreditCardEntity
         
@@ -50,7 +57,7 @@ final class CoreDataManager {
         }
     }
     
-    private func retrieveCreditCardEntities() -> [CreditCard]? {
+    func retrieveCreditCardEntities() -> [CreditCard]? {
         
         let fetchRequest = NSFetchRequest<CreditCardEntity>(entityName: Keys.creditCard)
         do {
@@ -69,7 +76,7 @@ final class CoreDataManager {
         return nil
     }
     
-    private func deleteCreditCardEntity(_ cardNumber: Int64, _ CVV: Int16) {
+    func deleteCreditCardEntity(_ cardNumber: Int64, _ CVV: Int16) {
         
         let fetchRequest = NSFetchRequest<CreditCardEntity>(entityName: Keys.creditCard)
         fetchRequest.predicate = NSPredicate(format: "cardNumber == %@ && cardCVV == %@", cardNumber, CVV)

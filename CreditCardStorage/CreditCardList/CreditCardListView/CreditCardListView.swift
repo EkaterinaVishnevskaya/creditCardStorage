@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ViewCreditCardListInput: AnyObject {
-    
+    func update(with viewModel: CreditCardListViewModel)
 }
 
 protocol ViewCreditCardListOutput {
@@ -64,7 +64,9 @@ final class CreditCardListView: UIViewController {
 }
 
 extension CreditCardListView: ViewCreditCardListInput {
-    
+    func update(with viewModel: CreditCardListViewModel) {
+        
+    }
 }
 
 extension CreditCardListView: UITableViewDelegate, UITableViewDataSource {

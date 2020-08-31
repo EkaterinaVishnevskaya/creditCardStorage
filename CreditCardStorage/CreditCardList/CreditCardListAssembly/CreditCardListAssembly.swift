@@ -13,7 +13,8 @@ final class AssemblyCreditCardList {
     static func assembly() -> UIViewController {
         let view = CreditCardListView()
         let dataConverter = CreditCardListDataConverter()
-        let presenter = CreditCardListPresenter(dataConverter: dataConverter)
+        let dataManager = CoreDataManager()
+        let presenter = CreditCardListPresenter(dataConverter: dataConverter, dataManager: dataManager)
         let interactor = CreditCardListInteractor()
         let router = CreditCardListRouter(view: view)
         

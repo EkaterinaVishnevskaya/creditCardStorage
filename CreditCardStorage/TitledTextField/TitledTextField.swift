@@ -12,6 +12,10 @@ protocol TitledTextFieldDelegate: AnyObject {
     func textFieldDidChanged(text: String)
 }
 
+protocol TextableProtocol {
+    var text: String? { get }
+}
+
 final class TitledTextField: UIView {
     
     //MARK: - Constants
@@ -124,6 +128,14 @@ extension TitledTextField: UITextFieldDelegate {
         return true
         
     }
+}
+
+extension TitledTextField: TextableProtocol {
+    var text: String? {
+        return textField.text
+    }
+    
+    
 }
 
 //
