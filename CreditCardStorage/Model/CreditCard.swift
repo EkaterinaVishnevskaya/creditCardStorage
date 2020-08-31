@@ -10,7 +10,6 @@ import Foundation
 
 struct CreditCard {
     let phoneNumber: Int64
-    let fullName: String
     let expirationDate: Date
     let cardNumber: Int64
     let cardCVV: Int16

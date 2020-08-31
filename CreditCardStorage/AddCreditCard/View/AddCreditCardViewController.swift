@@ -9,11 +9,11 @@
 import UIKit
 
 protocol AddCreditCardViewOutput {
-    
+    func modifyCreditCardString(cardNumber: String)
 }
 
 protocol AddCreditCardViewInput: AnyObject {
-    
+    func setModifiedText(text: String)
 }
 
 final class AddCreditCardViewController: UIViewController {
@@ -38,6 +38,7 @@ final class AddCreditCardViewController: UIViewController {
     private let CVCTextField = TitledTextField()
     private let phoneNumberTextField = TitledTextField()
     private let navigationView = NavigationHeaderView()
+    private let buttonSave = UIButton()
     
     
     // MARK: - Life cycle
@@ -73,6 +74,15 @@ final class AddCreditCardViewController: UIViewController {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
+        cardNumberTextField.delegate = self
+        configureButtonSave()
+    }
+    
+    private func configureButtonSave() {
+        buttonSave.translatesAutoresizingMaskIntoConstraints = false
+        buttonSave.setTitle("Save", for: .normal)
+        buttonSave.setTitleColor(.blue, for: .normal)
+        view.addSubview(buttonSave)
     }
     
     private func setConstraintsForViews() {
@@ -95,7 +105,11 @@ final class AddCreditCardViewController: UIViewController {
             
             phoneNumberTextField.topAnchor.constraint(equalTo: dateExpirationTextField.bottomAnchor, constant: 26),
             phoneNumberTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 21),
-            phoneNumberTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -21)
+            phoneNumberTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -21),
+            buttonSave.topAnchor.constraint(equalTo: phoneNumberTextField.bottomAnchor, constant: 26),
+            buttonSave.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 21),
+            buttonSave.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -21),
+            buttonSave.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
@@ -103,23 +117,33 @@ final class AddCreditCardViewController: UIViewController {
         cardNumberTextField.viewModel = TitledTextFieldViewModel(titleText: "Номер карты",
                                                                  textFieldPlaceholderText: "Номер вашей карты",
                                                                  keyboardType: UIKeyboardType.default,
-                                                                 isSecure: true)
+                                                                 isSecure: false, creditCardField: .cardNumber)
         dateExpirationTextField.viewModel = TitledTextFieldViewModel(titleText: "Срок действия",
                                                                      textFieldPlaceholderText: "--/--",
                                                                      keyboardType: .default,
-                                                                     isSecure: false)
+                                                                     isSecure: false, creditCardField: .dateExpiration)
         CVCTextField.viewModel = TitledTextFieldViewModel(titleText: "CVC Код",
                                                           textFieldPlaceholderText: "Защитный код",
                                                           keyboardType: .numberPad,
-                                                          isSecure: true)
+                                                          isSecure: true, creditCardField: .CVCTextField)
         phoneNumberTextField.viewModel = TitledTextFieldViewModel(titleText: "Your phone #",
                                                                   textFieldPlaceholderText: "Enter you phone number",
                                                                   keyboardType: .phonePad,
-                                                                  isSecure: false)
+                                                                  isSecure: false, creditCardField: .phoneNumber)
     }
     
 }
 
 extension AddCreditCardViewController: AddCreditCardViewInput {
     
+    func setModifiedText(text: String) {
+        cardNumberTextField.updateText(text: text)
+    }
+    
+}
+
+extension AddCreditCardViewController: TitledTextFieldDelegate {
+    func textFieldDidChanged(text: String) {
+        presenter?.modifyCreditCardString(cardNumber: text)
+    }
 }

@@ -33,6 +33,8 @@
 		A999F2DA24ED270E0004C877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A999F2D924ED270E0004C877 /* Assets.xcassets */; };
 		A999F2E524ED27810004C877 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2E424ED27810004C877 /* CoreDataManager.swift */; };
 		A999F2E724ED2AFB0004C877 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999F2E624ED2AFB0004C877 /* CreditCard.swift */; };
+		EDBC0F7824F8FC1C008CA904 /* CardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC0F7724F8FC1C008CA904 /* CardValidator.swift */; };
+		EDBC0F7D24F8FDA5008CA904 /* CreditCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBC0F7C24F8FDA4008CA904 /* CreditCardType.swift */; };
 		F033855224EFC17C007B5D1A /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033855024EFC17C007B5D1A /* CardTableViewCell.swift */; };
 		F033855324EFC17C007B5D1A /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F033855124EFC17C007B5D1A /* CardTableViewCell.xib */; };
 		F033855624EFC4F3007B5D1A /* AddCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033855424EFC4F3007B5D1A /* AddCardTableViewCell.swift */; };
@@ -68,6 +70,8 @@
 		A999F2DE24ED270E0004C877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A999F2E424ED27810004C877 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		A999F2E624ED2AFB0004C877 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		EDBC0F7724F8FC1C008CA904 /* CardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardValidator.swift; sourceTree = "<group>"; };
+		EDBC0F7C24F8FDA4008CA904 /* CreditCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardType.swift; sourceTree = "<group>"; };
 		F033855024EFC17C007B5D1A /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		F033855124EFC17C007B5D1A /* CardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
 		F033855424EFC4F3007B5D1A /* AddCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardTableViewCell.swift; sourceTree = "<group>"; };
@@ -271,6 +275,8 @@
 		A999F2CC24ED270A0004C877 /* CreditCardStorage */ = {
 			isa = PBXGroup;
 			children = (
+				EDBC0F7B24F8FD8D008CA904 /* CreditCardType */,
+				EDBC0F7624F8FC07008CA904 /* Validator */,
 				53AA60DC24F651CC003299FF /* TitledTextField */,
 				53B8A75624F3C12B00BE745D /* AddCreditCard */,
 				40E8C9A924EFB809007493B7 /* Extensions */,
@@ -302,6 +308,22 @@
 				A999F2E624ED2AFB0004C877 /* CreditCard.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EDBC0F7624F8FC07008CA904 /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				EDBC0F7724F8FC1C008CA904 /* CardValidator.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
+		EDBC0F7B24F8FD8D008CA904 /* CreditCardType */ = {
+			isa = PBXGroup;
+			children = (
+				EDBC0F7C24F8FDA4008CA904 /* CreditCardType.swift */,
+			);
+			path = CreditCardType;
 			sourceTree = "<group>";
 		};
 		F033854F24EFC148007B5D1A /* Cells */ = {
@@ -389,6 +411,7 @@
 			files = (
 				53AA60E024F65635003299FF /* TitledTextFieldViewModel.swift in Sources */,
 				40542BC124ED3938002E3849 /* CreditCardListInteractor.swift in Sources */,
+				EDBC0F7824F8FC1C008CA904 /* CardValidator.swift in Sources */,
 				53B8A76524F3C1EC00BE745D /* AddCreditCardViewController.swift in Sources */,
 				53AA60DE24F651F6003299FF /* TitledTextField.swift in Sources */,
 				F033855624EFC4F3007B5D1A /* AddCardTableViewCell.swift in Sources */,
@@ -413,6 +436,7 @@
 				53B8A75F24F3C1A500BE745D /* AddCreditCardRouter.swift in Sources */,
 				40542BC724ED397F002E3849 /* CreditCardListEntity.swift in Sources */,
 				40542BC424ED3957002E3849 /* CreditCardListPresenter.swift in Sources */,
+				EDBC0F7D24F8FDA5008CA904 /* CreditCardType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
