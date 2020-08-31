@@ -27,6 +27,20 @@ extension AddCreditCardPresenter: AddCreditCardViewOutput {
         if let cardType = validator.verify(cardNumber: cardNumber) {
              print(cardType)
         }
+        let trimmedString = cardNumber.components(separatedBy: .whitespaces).joined()
+
+        let arrOfCharacters = Array(trimmedString)
+        var modifiedCreditCardString = ""
+
+        if(arrOfCharacters.count > 0) {
+            for i in 0...arrOfCharacters.count-1 {
+                modifiedCreditCardString.append(arrOfCharacters[i])
+                if((i+1) % 4 == 0 && i+1 != arrOfCharacters.count){
+                    modifiedCreditCardString.append(" ")
+                }
+            }
+        }
+        view?.setModifiedText(text: modifiedCreditCardString)
     }
 }
 

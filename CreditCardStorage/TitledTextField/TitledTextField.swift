@@ -96,6 +96,10 @@ final class TitledTextField: UIView {
             delegate?.textFieldDidChanged(text: text)
         }
     }
+    
+    func updateText(text: String) {
+        textField.text = text
+    }
 }
 
 //MARK: - UITextFieldDelegate
